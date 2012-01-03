@@ -5,6 +5,7 @@ source "http://rubygems.org"
 gem "sequel"
 gem "odf-report"
 gem "google-spreadsheet-ruby"
+gem "configuration", "~> 1.3.1"
 
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.
