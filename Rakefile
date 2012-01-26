@@ -22,8 +22,8 @@ Jeweler::Tasks.new do |gem|
   gem.email = "greshny@gmail.com"
   gem.authors = ["Roman Greshny"]
   # dependencies defined in Gemfile
-  gem.add_dependency 'sequel', '= 1.6.4'
-  gem.add_dependency 'google-spreadsheet-ruby', '= 0.1.6'
+  gem.add_dependency 'sequel'
+  gem.add_dependency 'google-spreadsheet-ruby'
 end
 Jeweler::RubygemsDotOrgTasks.new
 
