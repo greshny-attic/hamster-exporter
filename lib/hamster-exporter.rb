@@ -1,12 +1,7 @@
 require 'rubygems'
+require 'sequel'
+require 'google_spreadsheet'
 require 'hamporter/application'
-#require 'sequel'
-#require 'google_spreadsheet'
-#require 'yaml'
-#require 'hamporter/application'
-#require File.join(File.dirname(__FILE__), *%w[hamster activity])
-#require File.join(File.dirname(__FILE__), *%w[hamster category])
-#require File.join(File.dirname(__FILE__), *%w[hamster fact])
 
 #config = YAML::load(File.open("~/.hamster"))
 

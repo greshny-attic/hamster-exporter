@@ -1,2 +1,4 @@
-class Category < Sequel::Model
+module Hamster
+  class Category < Sequel::Model
+  end
 end
