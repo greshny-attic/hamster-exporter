@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "hamster-exporter"
   gem.homepage = "http://github.com/greshny/hamster-exporter"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{export data from hamster (http://projecthamster.wordpress.com/)}
+  gem.description = %Q{export data from hamster to different formats: pdf, odf, google-docs, csv}
   gem.email = "greshny@gmail.com"
   gem.authors = ["Roman Greshny"]
   # dependencies defined in Gemfile
@@ -42,7 +42,7 @@ end
 
 task :default => :test
 
-require 'rake/rdoctask'
+require 'rdoc/task'
 Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
