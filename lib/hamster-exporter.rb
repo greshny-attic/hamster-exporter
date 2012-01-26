@@ -1,5 +1,5 @@
 require 'rubygems'
-require 'hamposter/application'
+require 'hamporter/application'
 #require 'sequel'
 #require 'google_spreadsheet'
 #require 'yaml'
