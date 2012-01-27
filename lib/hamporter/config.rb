@@ -4,7 +4,7 @@ module Hamporter
       @config = YAML::load(File.open("~/.hamster"))
     end
 
-    class<<self
+    class << self
       def google_login
         @config['google-docs']['login']
       end
