@@ -17,9 +17,8 @@ module Exporter
       end
     end
 
-    private
     def add_worksheet
-      @ws = session.spreadsheet_by_key(Hamporter::Configuration.instance.google_key).worksheets[0]
+      @ws = @session.spreadsheet_by_key(Hamporter::Configuration.instance.google_key).worksheets[0]
     end
 
   end
