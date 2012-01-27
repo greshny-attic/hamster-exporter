@@ -1,8 +1,7 @@
 module Exporter
   class GoogleDocs < Base
     def initialize
-      # FIXME: add configuration
-      @session = GoogleSpreadsheet.login(config['google-docs']['login'], config['google-docs']['password'])
+      @session = GoogleSpreadsheet.login(Hamporter::Configuration.google_login, Hamporter::Configuration.google_password)
       add_worksheet
     end
 
@@ -11,7 +10,7 @@ module Exporter
       fields = ['date', 'begin_time', 'finish_time', 'task', 'project']
       facts.each_with_index do |fact, i|
         fields.each_with_index do |field, index|
-          @ws[i + config['START_ROW'], index + 1] = fact.send field
+          @ws[i + Hamporter::Configuration.google_start_row, index + 1] = fact.send field
         end
         @ws.save
       end
@@ -19,7 +18,7 @@ module Exporter
 
     private
     def add_worksheet
-      @ws = session.spreadsheet_by_key(config['google-docs']['document-key']).worksheets[0]
+      @ws = session.spreadsheet_by_key(Hamporter::Configuration.google_key).worksheets[0]
     end
 
 
