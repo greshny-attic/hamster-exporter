@@ -2,7 +2,8 @@ module Hamporter
 
   class Application
     def run
-      puts "hello here"
+      puts "hello"
+      Exporter::GoogleDocs.new.push
     end
   end
 
