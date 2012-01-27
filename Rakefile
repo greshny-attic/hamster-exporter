@@ -24,6 +24,7 @@ Jeweler::Tasks.new do |gem|
   # dependencies defined in Gemfile
   gem.add_dependency 'sequel'
   gem.add_dependency 'google-spreadsheet-ruby'
+  gem.add_dependency 'sqlite3'
 end
 Jeweler::RubygemsDotOrgTasks.new
 

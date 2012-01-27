@@ -10,6 +10,7 @@ gem "configuration", "~> 1.3.1"
 gem "term-ansicolor"
 gem "progress"
 gem "mixlib-cli"
+gem "sqlite3"
 
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.

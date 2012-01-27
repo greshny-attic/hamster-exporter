@@ -37,7 +37,7 @@ module Hamporter
     end
 
     def database_path
-      @config['hamster']['db']
+      "sqlite://#{@config['hamster']['db']}"
     end
 
   end

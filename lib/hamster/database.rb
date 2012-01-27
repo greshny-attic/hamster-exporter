@@ -1,9 +1,7 @@
+require 'sequel'
 module Hamster
-  class << self
-    def database_connect
-      Sequel.connect(Hamster::Configuration.instance.database_path)
-    end
-  end
+
+  DB = Sequel.connect(Hamporter::Configuration.instance.database_path)
 
   class Category < Sequel::Model
   end

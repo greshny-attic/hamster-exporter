@@ -6,7 +6,7 @@ module Exporter
     end
 
     def push
-      Hamster.database_connect
+      Hamster::DB
       facts = Hamster::Fact.filter(:start_time => Date.parse('2011-11-01')..Date.parse('2011-11-30'))
       fields = ['date', 'begin_time', 'finish_time', 'task', 'project']
       facts.each_with_index do |fact, i|
