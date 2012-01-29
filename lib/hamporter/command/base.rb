@@ -88,4 +88,9 @@ protected
     end
   end
 
+  def self.alias_command(new, old)
+    raise "no such command: #{old}" unless Hamporter::Command.commands[old]
+    Hamporter::Command.command_aliases[new] = old
+  end
+
 end

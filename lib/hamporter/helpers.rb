@@ -49,5 +49,9 @@ module Hamporter
       exit 1
     end
 
+    def longest(items)
+      items.map { |i| i.to_s.length }.sort.last
+    end
+
   end
 end
