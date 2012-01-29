@@ -33,13 +33,13 @@ module Hamporter
 
     def format_date(date)
       date = Time.parse(date) if date.is_a? String
-      format = Hamporter::Configuration.date_format || "%Y-%m-%d"
+      format = Hamporter::Configuration.instance.format_date || "%Y-%m-%d"
       date.strftime(format)
     end
 
     def format_time(time)
       time = Time.parse(time) if time.is_a? String
-      format = Hamporter::Configuration.time_format || "%H:%M %Z"
+      format = Hamporter::Configuration.instance.format_time || "%H:%M %Z"
       time.strftime(format)
     end
 
