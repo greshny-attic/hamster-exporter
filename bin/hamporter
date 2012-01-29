@@ -8,4 +8,4 @@ end
 
 require 'hamster-exporter'
 
-Hamporter.application.run
+Hamporter.application.run(*ARGV)

@@ -40,5 +40,11 @@ module Hamporter
       "sqlite://#{@config['hamster']['db']}"
     end
 
+    def format_date
+      "%d.%m.%Y"
+    end
+
+    def format_time
+    end
   end
 end
