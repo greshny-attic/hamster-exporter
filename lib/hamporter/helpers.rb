@@ -1,7 +1,7 @@
 module Hamporter
   module Helpers
     def home_directory
-      ENV['home']
+      ENV['HOME']
     end
 
     def display(msg="", new_line=true)
@@ -39,7 +39,7 @@ module Hamporter
 
     def format_time(time)
       time = Time.parse(time) if time.is_a? String
-      format = Hamporter::Configuration.instance.format_time || "%H:%M %Z"
+      format = Hamporter::Configuration.instance.format_time || "%H:%M"
       time.strftime(format)
     end
 
@@ -52,6 +52,5 @@ module Hamporter
     def longest(items)
       items.map { |i| i.to_s.length }.sort.last
     end
-
   end
 end
