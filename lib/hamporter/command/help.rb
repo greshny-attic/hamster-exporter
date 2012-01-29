@@ -58,7 +58,7 @@ private
 
   def summary_for_namespaces(namespaces)
     size = longest(namespaces.map { |n| n[:name] })
-    namespces.sort_by { |namespace| namespace[:name] }.each do |namespace|
+    namespaces.sort_by { |namespace| namespace[:name] }.each do |namespace|
       name = namespace[:name]
       puts "  %-#{size}s # %s" % [name, namespace[:description]]
     end

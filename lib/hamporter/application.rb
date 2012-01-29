@@ -4,7 +4,7 @@ module Hamporter
     def run(*args)
       command = args.shift.strip rescue "help"
       Hamporter::Command.load
-      Hamporter::Command.exec(command, args)
+      Hamporter::Command.run(command, args)
     end
   end
 
