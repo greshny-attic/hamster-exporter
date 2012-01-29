@@ -5,6 +5,7 @@ module Hamster
   extend Hamporter::Helpers
 
   FIELDS = %w( activity category tag start_time end_time )
+  FACTS_FIELDS = %w( date begin_time finish_time task project )
 
   DB = Sequel.connect(Hamporter::Configuration.instance.database_path)
 

@@ -7,5 +7,4 @@ rescue LoadError
 end
 
 require 'hamster-exporter'
-
 Hamporter.application.run(*ARGV)

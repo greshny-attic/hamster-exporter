@@ -28,12 +28,12 @@ private
     add_worksheet
     Hamster::DB
     facts = get_tasks
-    fields = ['date', 'begin_time', 'finish_time', 'task', 'project']
+    fields = Hamster::FACTS_FIELDS
     facts.each_with_index do |fact, i|
       fields.each_with_index do |field, index|
         @ws[i + Hamporter::Configuration.instance.google_start_row, index + 1] = fact.send field
       end
-      display("#{fact.project} #{fact.date} importing #{fact.task} #{fact.begin_time} #{fact.finish_time}...")
+      display("#{fact.date} #{fact.task} #{fact.project} #{fact.begin_time} #{fact.finish_time}...")
       @ws.save
     end
   end
