@@ -1,6 +1,9 @@
 require 'sequel'
+require 'hamporter/helpers'
 module Hamster
+
   extend Hamporter::Helpers
+
   FIELDS = %w( activity category tag start_time end_time )
 
   DB = Sequel.connect(Hamporter::Configuration.instance.database_path)
