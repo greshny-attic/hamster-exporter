@@ -1,6 +1,7 @@
 require 'sequel'
 module Hamster
-FIELDS = %w( activity category tag start_time end_time )
+  extend Hamporter::Helpers
+  FIELDS = %w( activity category tag start_time end_time )
 
   DB = Sequel.connect(Hamporter::Configuration.instance.database_path)
 
@@ -18,15 +19,15 @@ FIELDS = %w( activity category tag start_time end_time )
     many_to_one :activity, :key => :activity_id
 
     def begin_time
-      DateTime.parse("#{self.start_time}").to_time.strftime(Hamporter::Configuration.instance.format_time)
+      Hamster.format_time(self.start_time)
     end
 
     def finish_time
-      DateTime.parse("#{self.end_time}").to_time.strftime(Hamporter::Configuration.instance.format_time)
+      self.end_time.nil? ? self.begin_time : Hamster.format_time(self.end_time)
     end
 
     def date
-      DateTime.parse("#{self.start_time}").to_time.strftime(Hamporter::Configuration.instance.format_date)
+      Hamster.format_date(self.start_time)
     end
 
     def task

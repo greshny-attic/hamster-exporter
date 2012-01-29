@@ -45,6 +45,7 @@ module Hamporter
     end
 
     def format_time
+      "%H:%M:%Z"
     end
   end
 end
