@@ -43,4 +43,15 @@ module Hamster
     end
   end
 
+  class Task
+    def self.all
+      Hamster::Fact.all
+    end
+
+    def self.filter(start_date,end_date=nil)
+      end_date ||= Hamster::Fact.all.last.start_time
+      Hamster::Fact.filter(:start_time => start_date..end_date)
+    end
+  end
+
 end

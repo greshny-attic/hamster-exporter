@@ -40,9 +40,9 @@ private
 
   def get_tasks
     unless @start_date
-      Hamster::Fact.all
+      Hamster::Task.all
     else
-      Hamster::Fact.filter(:start_time => @start_date...Date.today)
+      Hamster::Task.filter(@start_date)
     end
   end
 
