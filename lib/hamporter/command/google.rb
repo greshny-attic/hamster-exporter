@@ -42,7 +42,7 @@ private
     unless @start_date
       Hamster::Fact.all
     else
-      Hamster::Fact.filter(:start_time => @start_date..Date.today)
+      Hamster::Fact.filter(:start_time => @start_date...Date.today)
     end
   end
 
