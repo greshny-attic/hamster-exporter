@@ -1,4 +1,5 @@
 require 'sequel'
+require 'date'
 require 'hamporter/helpers'
 module Hamster
 
@@ -30,12 +31,12 @@ module Hamster
       self.end_time.nil? ? self.begin_time : Hamster.format_time(self.end_time)
     end
 
-    def date
-      Hamster.format_date(self.start_time)
-    end
-
     def task
       self.activity.name unless self.activity.name.nil?
+    end
+
+    def date
+      Hamster.format_date(self.start_time)
     end
 
     def project
@@ -49,7 +50,7 @@ module Hamster
     end
 
     def self.filter(start_date,end_date=nil)
-      end_date ||= Hamster::Fact.all.last.start_time
+      end_date ||= Date.parse(Time.now.to_s) + 1
       Hamster::Fact.filter(:start_time => start_date..end_date)
     end
   end
